@@ -4,6 +4,7 @@ const INITIAL_STATE = {
     data: [],
     error: false,
     loading: false,
+    success: false
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -12,11 +13,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return { ...state, loading: true };
     case types.GET_GAME_DATA_SUCCESS:
       return {
-      ...state, loading: false, error: false, data: action.payload.data,
+      ...state, loading: false, error: false, data: action.payload.data, success: true
       };
     case types.GET_GAME_DATA_FAILURE:
       return {
-      ...state, loading: false, error: true, data: [],
+      ...state, loading: false, error: true, data: [], success: false
       };
     default:
       return state;
