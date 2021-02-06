@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./styles";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Input = () => {
+import * as RaceActions from '../../store/ducks/game-schedule/actions';
+
+const Input = (props) => {
   const [value, setValue] = useState("");
   const onFetchGame = () => {
-    fetch(
-      `https://www.atg.se/services/racinginfo/v1/api/products/${value.toUpperCase()}`
-    )
-      .then((response) => response.json())
-      .then((response) => console.log(response));
+    props.getGameScheduleRequest(`${value.toUpperCase()}`)
   };
 
   const handleKeyPress = (event) => {
@@ -27,4 +27,7 @@ const Input = () => {
   );
 };
 
-export default Input;
+const mapDispatchToProps = (dispatch) => bindActionCreators(RaceActions, dispatch);
+
+
+export default connect(null, mapDispatchToProps)(Input);
