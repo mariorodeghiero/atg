@@ -1,19 +1,22 @@
 import React from "react";
 import * as S from "./styles";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as GameDataActions from '../../store/ducks/game-data/actions';
 
-const Race = ({ id, startTime }) => {
+const Race = (props) => {
 
-  const onFetchRace = (id) => {
-    fetch(`https://www.atg.se/services/racinginfo/v1/api/games/${id}`)
-    .then(response => response.json())
-    .then(response => console.log(response))
+  const onFetchRace = () => {
+   props.getGameDataRequest(props.id)
   }
 
   return (
-    <li onClick={() => onFetchRace(id)}>
-      {id} - {startTime}
+    <li onClick={() => onFetchRace()}>
+      {props.id} - {props.startTime}
     </li>
   );
 };
 
-export default Race;
+const mapDispatchToProps = (dispatch) => bindActionCreators(GameDataActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(Race);
