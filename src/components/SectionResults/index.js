@@ -1,24 +1,27 @@
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import Game from "../Game";
 import * as S from "./styles";
 
-const SectionResults = ({ upcoming, results, loading, error, success }) => {
+const SectionResults = ({ upcoming, results, loading, error, success, betType }) => {
+  const [ gameSelected, setGameSelected ] = useState("")
+
   return (
     <S.Wrapper>
       {success && (
         <>
           <S.SubTitle>Upcoming {upcoming.length} results</S.SubTitle>
           {upcoming && (
-            <ul>
+            <S.List>
               {upcoming.length > 0
                 ? upcoming.map(({ id, startTime }, index) => (
-                    <Game key={index} id={id} startTime={startTime} />
+                    <Game key={index} betType={betType} id={id} startTime={startTime} setGameSelected={setGameSelected} gameSelected={gameSelected}/>
                   ))
                 : results.map(({ id, startTime }, index) => (
-                    <Game key={index} id={id} startTime={startTime} />
+                    <Game key={index} betType={betType} id={id} startTime={startTime}  setGameSelected={setGameSelected} gameSelected={gameSelected}/>
                   ))}
-            </ul>
+            </S.List>
           )}
         </>
       )}
@@ -29,6 +32,7 @@ const SectionResults = ({ upcoming, results, loading, error, success }) => {
 };
 
 const mapStateToProps = (state) => ({
+  betType: state.gameSchedule.data.betType,
   upcoming: state.gameSchedule.data.upcoming,
   results: state.gameSchedule.data.results,
   loading: state.gameSchedule.loading,
