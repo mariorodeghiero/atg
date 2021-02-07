@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as S from "./styles";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import SearchOutlined from '@material-ui/icons/SearchOutlined';
 
 import * as GameScheduleActions from '../../store/ducks/game-schedule/actions';
 
@@ -14,17 +15,28 @@ const Input = (props) => {
 
   const handleKeyPress = (event) => {
     if (event.keyCode === 13) {
-      event.target.blur(event);
+      onFetchGame();
     }
   };
   
   return (
-    <S.Input
-      onChange={(event) => setValue(event.target.value)}
-      onKeyDown={(event) => handleKeyPress(event)}
-      type="text"
-      onBlur={onFetchGame}
-    />
+    <S.Wrapper>
+      <S.Search>
+        <label htmlFor="search">
+          <SearchOutlined style={{ fontSize: 32 }} />
+        </label>
+        <S.Input
+          id="search"
+          onChange={(event) => setValue(event.target.value)}
+          onKeyDown={(event) => handleKeyPress(event)}
+          type="text"
+          placeholder="e.g V4, V64, V75"
+          />
+      </S.Search>
+      <div>
+        <S.Button onClick={onFetchGame}>SEARCH</S.Button>
+      </div>
+    </S.Wrapper>
   );
 };
 

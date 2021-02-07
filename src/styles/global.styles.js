@@ -11,8 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html, body, #__next {
     height: 100%;
-    background-color: #06092b;
-    color: #ffffff;
+    background-color: #f2f2f2;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -20,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
   :root{
     --blue: #2A4F9F;
     --white: #ffffff;
+    --black: #222;
     --yellow: #F7DB4A;
     --gray-light: #f2f2f2;
     --border-gray-light: rgba(242, 242, 242, 0.3);

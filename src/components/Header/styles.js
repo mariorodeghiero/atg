@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.header`
-	color: #fff;
 	width: 100%;
     max-width: 960px;
     margin: 0 auto;
