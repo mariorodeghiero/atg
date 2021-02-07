@@ -79,7 +79,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "generate": "yarn plop --plopfile generators/plopfile.js"
   },
   "eslintConfig": {
     "extends": [
@@ -155,5 +156,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "plop": "^2.7.4"
   }
 }
