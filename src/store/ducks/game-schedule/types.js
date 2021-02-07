@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
     GET_GAME_SCHEDULE_REQUEST : "GET_GAME_SCHEDULE_REQUEST",
     GET_GAME_SCHEDULE_SUCCESS : "GET_GAME_SCHEDULE_SUCCESS",
