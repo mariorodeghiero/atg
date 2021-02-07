@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
     --black: #222;
     --yellow: #F7DB4A;
     --gray-light: #f2f2f2;
+    --gray: #8F9BB3;
     --border-gray-light: rgba(242, 242, 242, 0.3);
   }
 `

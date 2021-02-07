@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
 import SectionGameInformation from '../components/SectionGameInformation';
 import SectionHeader from '../components/SectionHeader';
-import SectionRace from '../components/SectionRace';
+import SectionResults from '../components/SectionResults';
 import SectionSearch from '../components/SectionSearch';
 import GlobalStyle from '../styles/global.styles'
 
@@ -12,7 +11,7 @@ const App = () => {
       <GlobalStyle/>
       <SectionHeader/>
       <SectionSearch/>
-      <SectionRace/>
+      <SectionResults/>
       <SectionGameInformation/>
     </>
   );
