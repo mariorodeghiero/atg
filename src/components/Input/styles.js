@@ -28,4 +28,9 @@ export const Button = styled.button`
     padding: 1.5rem 2.25rem;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
+
+    :hover {
+        opacity: 0.9;
+    }
 `

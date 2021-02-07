@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import Game from "../Game";
+import Loader from "../Loader";
 import * as S from "./styles";
 
 const SectionResults = ({ upcoming, results, loading, error, success, betType }) => {
@@ -25,7 +26,7 @@ const SectionResults = ({ upcoming, results, loading, error, success, betType })
           )}
         </>
       )}
-      {loading && "Loading..."}
+      {loading && <Loader showLogo/>}
       {error && "Failed !!!"}
     </S.Wrapper>
   );

@@ -24,7 +24,7 @@ const Input = (props) => {
     <S.Wrapper>
       <S.Search>
         <label htmlFor="search">
-          <SearchOutlined style={{ fontSize: 32 }} />
+          <SearchOutlined style={{ fontSize: 32, color: "gray" }} />
         </label>
         <S.Input
           id="search"

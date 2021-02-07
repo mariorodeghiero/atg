@@ -7,14 +7,16 @@ import moment from 'moment'
 
 const Game = ({ id, startTime, getGameDataRequest, betType, gameSelected, setGameSelected}) => {
   const onFetchRace = () => {
-    setGameSelected(id)
-   getGameDataRequest(id)
+    if (gameSelected !== id) {
+      setGameSelected(id)
+      getGameDataRequest(id)
+    }
   }
 
   return (
     <S.ListItem onClick={() => onFetchRace()} active={gameSelected === id}>
-      <S.Title>{betType}</S.Title>
-      <S.Time>{moment(startTime).format('D MMM YYYY, hh:mm')}</S.Time>
+      <S.Title active={gameSelected === id}>{betType}</S.Title>
+      <S.Time active={gameSelected === id}>{moment(startTime).format('D MMM YYYY, hh:mm')}</S.Time>
     </S.ListItem>
   );
 };
