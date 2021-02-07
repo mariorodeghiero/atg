@@ -13,3 +13,7 @@ export const getGameDataSuccess = (data) => ({
 export const getGameDataFailure = () => ({
     type: types.GET_GAME_DATA_FAILURE
 });
+
+export const resetGameDataState = () => ({
+    type: types.RESET_GAME_DATA_STATE
+});

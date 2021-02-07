@@ -19,6 +19,10 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
       ...state, loading: false, error: true, data: [], success: false
       };
+    case types.RESET_GAME_DATA_STATE:
+      return {
+      ...state, loading: false, error: false, data: [], success: false
+      };
     default:
       return state;
   }

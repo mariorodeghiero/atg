@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import SearchOutlined from '@material-ui/icons/SearchOutlined';
 
 import * as GameScheduleActions from '../../store/ducks/game-schedule/actions';
+import * as GameDataActions from '../../store/ducks/game-data/actions';
 
 const Input = (props) => {
   const [value, setValue] = useState("");
   const onFetchGame = () => {
-    console.log("object")
+    props.resetGameDataState()
     props.getGameScheduleRequest(`${value.toUpperCase()}`)
   };
 
@@ -40,6 +41,6 @@ const Input = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(GameScheduleActions, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({...GameScheduleActions, ...GameDataActions}, dispatch);
 
 export default connect(null, mapDispatchToProps)(Input);

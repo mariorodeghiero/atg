@@ -11,7 +11,7 @@ const SectionResults = ({ upcoming, results, loading, error, success, betType })
     <S.Wrapper>
       {success && (
         <>
-          <S.SubTitle>Upcoming {upcoming.length} results</S.SubTitle>
+          <S.SubTitle>Upcoming {upcoming ? upcoming.length : results.length} results</S.SubTitle>
           {upcoming && (
             <S.List>
               {upcoming.length > 0
