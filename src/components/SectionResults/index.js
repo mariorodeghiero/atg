@@ -27,7 +27,7 @@ const SectionResults = ({ upcoming, results, loading, error, success, betType })
         </>
       )}
       {loading && <Loader showLogo/>}
-      {error && "Failed !!!"}
+      {error && <p>Failed !!!</p>}
     </S.Wrapper>
   );
 };

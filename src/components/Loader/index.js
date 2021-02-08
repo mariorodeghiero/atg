@@ -6,7 +6,7 @@ const Loader = ({ showLogo }) => {
   return (
     <S.Container showLogo={showLogo}>
       { showLogo && <S.ImageSection>
-        <S.Image image={ATG} />
+        <S.Image id="image"image={ATG} />
       </S.ImageSection>
       }
       <S.PreloaderSection>

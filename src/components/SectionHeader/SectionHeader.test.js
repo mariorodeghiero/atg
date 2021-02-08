@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 import SectionHeader from '.'
 
-describe('<SectionHeader />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<SectionHeader />)
-
-    expect(screen.getByRole('heading', { name: /SectionHeader/i })).toBeInTheDocument()
-  })
-})
+describe("Test SectionHeader Component", () => {
+  it('render SectionHeader without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(<SectionHeader/>, div)
+	})
+});

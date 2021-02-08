@@ -1,11 +1,18 @@
-import { render, screen } from '@testing-library/react'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { shallow } from 'enzyme';
 
 import Loader from '.'
+import ATG from "../../atg.se";
 
 describe('<Loader />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<Loader />)
-
-    expect(screen.getByRole('heading', { name: /Loader/i })).toBeInTheDocument()
+  it('render Loader without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(<Loader />, div)
   })
+  
+  it('should render image', () => {
+    const wrapper = shallow(<Loader showLogo/>);
+    expect(wrapper.find("#image").prop("image")).toEqual(ATG);
+  });
 })

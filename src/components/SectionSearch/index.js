@@ -5,7 +5,7 @@ const SectionSearch = () => (
   <S.Wrapper>
     <S.Content>
       <S.Title>Find The Best Games</S.Title>
-          <Input />
+      <Input />
     </S.Content>
   </S.Wrapper>
 );
