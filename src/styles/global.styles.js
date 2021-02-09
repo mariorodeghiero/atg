@@ -24,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
     --gray-light: #f2f2f2;
     --gray: #8F9BB3;
     --border-gray-light: rgba(242, 242, 242, 0.3);
+    --red: #DD4033;
   }
 `
 
