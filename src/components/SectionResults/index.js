@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import FailedMessage from "../FailedMessage";
 
 import Game from "../Game";
 import Loader from "../Loader";
@@ -26,8 +27,8 @@ const SectionResults = ({ upcoming, results, loading, error, success, betType })
           )}
         </>
       )}
-      {loading && <Loader showLogo/>}
-      {error && <p>Failed !!!</p>}
+      {loading && !error && !success && <Loader showLogo/>}
+      {error && !success && !loading && <FailedMessage/>}
     </S.Wrapper>
   );
 };
