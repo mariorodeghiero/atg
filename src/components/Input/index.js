@@ -9,19 +9,14 @@ import * as GameDataActions from '../../store/ducks/game-data/actions';
 
 const Input = (props) => {
   const [value, setValue] = useState("");
-  const onFetchGame = () => {
+  const onFetchGame = (e) => {
+    e.preventDefault()
     props.resetGameDataState()
     props.getGameScheduleRequest(`${value.toUpperCase()}`)
   };
-
-  const handleKeyPress = (event) => {
-    if (event.keyCode === 13) {
-      onFetchGame();
-    }
-  };
   
   return (
-    <S.Wrapper>
+    <S.Wrapper onSubmit={(e) => onFetchGame(e)}>
       <S.Search>
         <label htmlFor="search">
           <SearchOutlined style={{ fontSize: 32, color: "gray" }} />
@@ -29,13 +24,13 @@ const Input = (props) => {
         <S.Input
           id="search"
           onChange={(event) => setValue(event.target.value)}
-          onKeyDown={(event) => handleKeyPress(event)}
           type="text"
           placeholder="e.g V4, V64, V75"
+          required
           />
       </S.Search>
       <div>
-        <S.Button onClick={onFetchGame}>SEARCH</S.Button>
+        <S.Button type="submit">SEARCH</S.Button>
       </div>
     </S.Wrapper>
   );

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     height: 7rem;
     background-color: var(--white);
     display: flex;
