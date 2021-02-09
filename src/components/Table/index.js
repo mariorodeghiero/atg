@@ -55,24 +55,24 @@ function Row(props) {
                   <TableRow>
                     <TableCell style={{ fontWeight: "bold"}}>Start number</TableCell>
                     <TableCell style={{ fontWeight: "bold"}}>Horse name</TableCell>
-                    <TableCell align="right" style={{ fontWeight: "bold"}}>Driver/rider</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold"}}>Driver/Rider</TableCell>
                     <TableCell align="right" style={{ fontWeight: "bold"}}>Trainer</TableCell>
                     <TableCell align="right" style={{ fontWeight: "bold"}}>Horse father</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.starts.map((historyRow) => (
-                    <TableRow key={historyRow.number}>
+                  {row.starts.map((start) => (
+                    <TableRow key={start.number}>
                       <TableCell component="th" scope="row">
-                        {historyRow.number}
+                        {start.number}
                       </TableCell>
-                      <TableCell>{historyRow.horse.name}</TableCell>
-                      <TableCell align="right">{historyRow.driver.firstName}</TableCell>
+                      <TableCell>{start.horse.name}</TableCell>
+                      <TableCell align="right">{start.driver.firstName} {start.driver.lastName}</TableCell>
                       <TableCell align="right">
-                        {historyRow.horse.trainer.firstName}
+                        {start.horse.trainer.firstName} {start.horse.trainer.lastName}
                       </TableCell>
                       <TableCell align="right">
-                        {historyRow.horse.pedigree.father.name}
+                        {start.horse.pedigree.father.name}
                       </TableCell>
                     </TableRow>
                   ))}
