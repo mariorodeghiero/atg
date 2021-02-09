@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as GameDataActions from '../../store/ducks/game-data/actions';
 import moment from 'moment'
 
-const Game = ({ id, startTime, getGameDataRequest, betType, gameSelected, setGameSelected}) => {
+const Game = ({ id, startTime, getGameDataRequest, betType, gameSelected, setGameSelected }) => {
   const onFetchRace = () => {
     if (gameSelected !== id) {
       setGameSelected(id)

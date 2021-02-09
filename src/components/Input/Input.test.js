@@ -8,7 +8,7 @@ import Input from "./index"
 const mockStore = configureMockStore();
 
 describe("<Input />", () => {
-  let wrInputer, store;
+  let wrapper, store;
   const initialState = {
     gameSchedule: {
       data: {
@@ -28,7 +28,7 @@ describe("<Input />", () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrInputer = mount(
+    wrapper = mount(
       <Provider store={store}>
         <Input {...initialState} />
       </Provider>
@@ -36,6 +36,6 @@ describe("<Input />", () => {
   });
 
   it("render the connected(Input) component", () => {
-    expect(wrInputer.length).toEqual(1);
+    expect(wrapper.length).toEqual(1);
   });
 });
