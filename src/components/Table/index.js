@@ -13,11 +13,13 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import moment from 'moment'
 
 const useRowStyles = makeStyles({
   root: {
     '& > *': {
       borderBottom: 'unset',
+      fontSize: "10px"
     },
   },
 });
@@ -29,7 +31,7 @@ function Row(props) {
 
   return (
     <React.Fragment>
-      <TableRow className={classes.root}>
+      <TableRow className={classes.root} >
         <TableCell>
           <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
@@ -39,25 +41,23 @@ function Row(props) {
           {row.number}
         </TableCell>
         <TableCell align="right">{row.name}</TableCell>
-        <TableCell align="right">{row.startTime}</TableCell>
-        {/* <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell> */}
+        <TableCell align="right">{moment(row.startTime).format('D MMM YYYY, hh:mm')}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
               <Typography variant="h6" gutterBottom component="div">
-                Starts information
+                Starts Information
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Start number</TableCell>
-                    <TableCell>Horse name</TableCell>
-                    <TableCell align="right">Driver/rider</TableCell>
-                    <TableCell align="right">Trainer</TableCell>
-                    <TableCell align="right">horse father</TableCell>
+                    <TableCell style={{ fontWeight: "bold"}}>Start number</TableCell>
+                    <TableCell style={{ fontWeight: "bold"}}>Horse name</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold"}}>Driver/rider</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold"}}>Trainer</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold"}}>Horse father</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -90,12 +90,12 @@ export default function CollapsibleTable({races}) {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
-        <TableHead>
+        <TableHead style={{backgroundColor: "#2A4F9F"}}>
           <TableRow>
             <TableCell />
-            <TableCell>Race number</TableCell>
-            <TableCell align="right">Race name</TableCell>
-            <TableCell align="right">Race start time</TableCell>
+            <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A" }}>Race Number</TableCell>
+            <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A"}} align="right">Race Name</TableCell>
+            <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A"}} align="right">Race Start Time</TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>

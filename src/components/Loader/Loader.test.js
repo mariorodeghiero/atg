@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme';
 
 import Loader from '.'
-import ATG from "../../atg.se";
+import ATG from "../../assets/atg.se";
 
 describe('<Loader />', () => {
   it('render Loader without crashing', () => {

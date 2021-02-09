@@ -8,7 +8,7 @@ export const Wrapper = styled.main`
 
 export const Content = styled.div`
     position: absolute;
-    top: 17%;
+    top: 22.5%;
     width: 100%;
     max-width: 960px;
     height: 16rem; 

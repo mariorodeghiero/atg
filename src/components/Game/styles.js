@@ -9,7 +9,8 @@ export const ListItem = styled.li`
   margin: 2rem 1rem;
   color: var(--white);
   border-radius: 0.5rem;
-
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
   :hover {
     ${({ active }) =>
       !active &&
