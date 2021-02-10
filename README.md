@@ -9,6 +9,7 @@
 
 This project uses lot of stuff as:
 
+- [Storybook](https://storybook.js.org/) - Allows you to develop and design your graphical interfaces quickly, isolated, and independently.
 - [redux](https://redux.js.org/) - A Predictable State Container for JS Apps
 - [redux-saga](https://redux-saga.js.org/) - Redux middleware
 - [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
@@ -52,6 +53,17 @@ yarn start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page auto-updates as you edit the file.
+
+## Storybook
+
+
+```bash
+npm run storybook
+
+# or
+
+yarn storybook
+```
 
 ## Build
 
