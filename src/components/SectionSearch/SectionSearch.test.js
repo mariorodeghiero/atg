@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import { render } from 'enzyme'
+import { render, shallow, mount } from 'enzyme'
 
 import SectionSearch from '.'
 
@@ -23,10 +23,8 @@ describe('<SectionSearch />', () => {
   })
   
   it('should contain title', () => {
-    const wrapper =  render(
-      <Provider store={store}><SectionSearch /></Provider>
-    )
-    expect(wrapper.text()).toContain("Find The Best Game")
+    const wrapper = render(<Provider store={store}><SectionSearch description={"Find Our Most Popular Games."}/></Provider>);
+    expect(wrapper.find("h1").text().includes('Find Our Most Popular Games.')).toBe(true)
   })
 
   it('should render the Input', () => {

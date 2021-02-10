@@ -10,7 +10,7 @@ const App = () => {
     <>
       <GlobalStyle/>
       <SectionHeader/>
-      <SectionSearch/>
+      <SectionSearch description={"Find Our Most Popular Games."}/>
       <SectionResults/>
       <SectionGameInformation/>
     </>

@@ -1,10 +1,10 @@
 import Input from "../Input";
 import * as S from "./styles";
 
-const SectionSearch = () => (
+const SectionSearch = ({ description }) => (
   <S.Wrapper>
     <S.Content>
-      <S.Title>Find The Best Games</S.Title>
+      <S.Title>{description}</S.Title>
       <Input />
     </S.Content>
   </S.Wrapper>
