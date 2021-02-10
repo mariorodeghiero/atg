@@ -10,9 +10,7 @@ describe('<App />', () => {
 	let wrapper, store
 	const initialState = {
 		gameSchedule: {
-			data: {
-				betType: 'V75'
-			},
+			data: [],
 			error: false,
 			success: false,
 			loading: false

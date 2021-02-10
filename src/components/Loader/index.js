@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import ATG from '../../assets/atg.se'
+import ATG from '../../assets/atg.jpg'
 
 const Loader = ({ showLogo }) => {
 	return (
