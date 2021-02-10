@@ -3,6 +3,9 @@
 [![The MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 <p>I started this project using create-react-app.</p>
+
+<img src="./src/assets/home.png">
+
 </div>
 
 ## What is inside?
