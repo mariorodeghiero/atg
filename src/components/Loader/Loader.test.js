@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'
 
 import Loader from '.'
-import ATG from "../../assets/atg.se";
+import ATG from '../../assets/atg.se'
 
 describe('<Loader />', () => {
-  it('render Loader without crashing', () => {
+	it('render Loader without crashing', () => {
 		const div = document.createElement('div')
 		ReactDOM.render(<Loader />, div)
-  })
-  
-  it('should render image', () => {
-    const wrapper = shallow(<Loader showLogo/>);
-    expect(wrapper.find("#image").prop("image")).toEqual(ATG);
-  });
+	})
+
+	it('should render image', () => {
+		const wrapper = shallow(<Loader showLogo />)
+		expect(wrapper.find('#image').prop('image')).toEqual(ATG)
+	})
 })

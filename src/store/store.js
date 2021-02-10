@@ -9,9 +9,9 @@ import rootSaga from './rootSaga'
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-    gameSchedule,
-    gameData,
-  })
+	gameSchedule,
+	gameData
+})
 
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 

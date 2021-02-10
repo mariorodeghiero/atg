@@ -1,19 +1,19 @@
-import types from "./types"
+import types from './types'
 
 export const getGameDataRequest = (id) => ({
-    type: types.GET_GAME_DATA_REQUEST,
-    payload: id
-});
+	type: types.GET_GAME_DATA_REQUEST,
+	payload: id
+})
 
 export const getGameDataSuccess = (data) => ({
-    type: types.GET_GAME_DATA_SUCCESS, 
-    payload: { data }
-});
+	type: types.GET_GAME_DATA_SUCCESS,
+	payload: { data }
+})
 
 export const getGameDataFailure = () => ({
-    type: types.GET_GAME_DATA_FAILURE
-});
+	type: types.GET_GAME_DATA_FAILURE
+})
 
 export const resetGameDataState = () => ({
-    type: types.RESET_GAME_DATA_STATE
-});
+	type: types.RESET_GAME_DATA_STATE
+})
