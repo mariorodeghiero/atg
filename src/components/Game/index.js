@@ -14,10 +14,8 @@ const Game = ({
 	setGameSelected
 }) => {
 	const onFetchRace = () => {
-		if (gameSelected !== id) {
 			setGameSelected(id)
 			getGameDataRequest(id)
-		}
 	}
 
 	return (
