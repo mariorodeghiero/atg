@@ -16,6 +16,7 @@ This project uses lot of stuff as:
 - [styled-components](https://styled-components.com/)
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [styled-media-query](https://www.npmjs.com/package/styled-media-query)
 
 ## Prerequisites
 
