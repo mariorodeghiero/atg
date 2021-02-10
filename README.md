@@ -32,7 +32,7 @@ This project uses lot of stuff as:
 First, clone the repo via git:
 
 ```bash
-$ git clone https://github.com/mariorodeghiero/atg your-project-name
+$ git clone git@github.com:mariorodeghiero/atg.git your-project-name
 ```
 
 And then install dependencies with npm.
