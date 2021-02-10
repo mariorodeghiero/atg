@@ -1,18 +1,18 @@
 import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import Game from "./index"
 
 const mockStore = configureMockStore();
 
 describe("<Game />", () => {
-  const id = 1 
-  const startTime ="2021-02-09T19:30:00" 
+  const id = 1
+  const startTime ="2021-02-09T19:30:00"
   const getGameDataRequest=  jest.fn()
   const betType = "V75"
-  const gameSelected = 2 
+  const gameSelected = 2
   const setGameSelected = jest.fn()
   const initialState = {}
   const store = mockStore(initialState);
@@ -20,12 +20,12 @@ describe("<Game />", () => {
   it("render the connected(Game) component", () => {
     const wrapper = mount(
         <Provider store={store}>
-          <Game 
-              id={id} 
-              startTime={startTime} 
+          <Game
+              id={id}
+              startTime={startTime}
               getGameDataRequest={getGameDataRequest}
-              betType={betType} 
-              gameSelected={gameSelected} 
+              betType={betType}
+              gameSelected={gameSelected}
               setGameSelected={setGameSelected}/>
         </Provider>
       );
@@ -34,12 +34,12 @@ describe("<Game />", () => {
 
   it("should call the onClick event", () => {
     const wrapper = mount(<Provider store={store}>
-        <Game 
-            id={id} 
-            startTime={startTime} 
+        <Game
+            id={id}
+            startTime={startTime}
             getGameDataRequest={getGameDataRequest}
-            betType={betType} 
-            gameSelected={gameSelected} 
+            betType={betType}
+            gameSelected={gameSelected}
             setGameSelected={setGameSelected}/>
       </Provider>)
     wrapper.find('li').first().childAt(0).simulate('click')

@@ -1,9 +1,14 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
     width: 100%;
     max-width: 960px;
     margin: 8rem auto 2rem auto;
+
+		${media.lessThan('large')`
+			padding: 0 2rem 0 2rem;
+  	`}
 `
 
 export const SubTitle = styled.h2`

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.form`
     height: 7rem;
@@ -37,7 +38,7 @@ export const Input = styled.input`
 export const Button = styled.button`
     background-color: var(--blue);
     color: var(--white);
-    padding: 1.5rem 2.25rem;
+    padding: 1rem 1.25rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -45,4 +46,8 @@ export const Button = styled.button`
     :hover {
         opacity: 0.9;
     }
+
+		${media.greaterThan('medium')`
+			padding: 1.5rem 2.25rem;
+  	`}
 `
