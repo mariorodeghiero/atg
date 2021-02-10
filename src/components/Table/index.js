@@ -53,25 +53,25 @@ function Row(props) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold"}}>Start number</TableCell>
-                    <TableCell style={{ fontWeight: "bold"}}>Horse name</TableCell>
-                    <TableCell align="right" style={{ fontWeight: "bold"}}>Driver/Rider</TableCell>
-                    <TableCell align="right" style={{ fontWeight: "bold"}}>Trainer</TableCell>
-                    <TableCell align="right" style={{ fontWeight: "bold"}}>Horse father</TableCell>
+                    <TableCell style={{ fontWeight: "bold", fontSize: "1rem"}}>Start number</TableCell>
+                    <TableCell style={{ fontWeight: "bold", fontSize: "1rem"}}>Horse name</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold", fontSize: "1rem"}}>Driver/Rider</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold", fontSize: "1rem"}}>Trainer</TableCell>
+                    <TableCell align="right" style={{ fontWeight: "bold", fontSize: "1rem"}}>Horse father</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {row.starts.map((start) => (
                     <TableRow key={start.number}>
-                      <TableCell component="th" scope="row">
+                      <TableCell component="th" scope="row" style={{ fontSize: "1rem"}}>
                         {start.number}
                       </TableCell>
-                      <TableCell>{start.horse.name}</TableCell>
-                      <TableCell align="right">{start.driver.firstName} {start.driver.lastName}</TableCell>
-                      <TableCell align="right">
+                      <TableCell style={{ fontSize: "1rem"}}>{start.horse.name}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "1rem"}}>{start.driver.firstName} {start.driver.lastName}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "1rem"}}>
                         {start.horse.trainer.firstName} {start.horse.trainer.lastName}
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align="right" style={{ fontSize: "1rem"}}>
                         {start.horse.pedigree.father.name}
                       </TableCell>
                     </TableRow>
@@ -95,7 +95,7 @@ export default function CollapsibleTable({races}) {
             <TableCell />
             <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A" }}>Race Number</TableCell>
             <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A"}} align="right">Race Name</TableCell>
-            <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A"}} align="right">Race Start Time</TableCell>
+            <TableCell style={{ fontWeight: "bold", fontSize: "12px", color: "#F7DB4A"}} align="right">Start Time</TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
